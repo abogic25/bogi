@@ -9,29 +9,31 @@ const profile = useProfileStore()
 <template>
   <div>
     <!-- Hero -->
-    <div class="card-lux mb-4 fade-up fade-up-1">
-      <div class="row align-items-center g-4">
-        <div class="col-lg-auto text-center">
-          <div class="hero-avatar mx-auto">{{ profile.initials }}</div>
-        </div>
-        <div class="col-lg">
-          <span class="badge-lux d-inline-block mb-2">PORTFOLIO</span>
-          <h1 class="fw-bold mb-1">
-            Hi, I'm <span style="color: var(--lux-gold-soft)">{{ profile.name }}</span>
-          </h1>
-          <p class="mb-2" style="color: var(--lux-gold-soft); font-weight:600;">
-            {{ profile.role }}
-          </p>
-          <p style="color: var(--lux-muted); max-width: 620px;" class="mb-3">
-            {{ profile.tagline }}
-          </p>
-          <div class="d-flex flex-wrap gap-2">
-            <RouterLink :to="{ name: 'contact' }" class="btn btn-lux">
-              <i class="bi bi-send me-1" /> Hire Me
-            </RouterLink>
-            <RouterLink :to="{ name: 'projects' }" class="btn btn-lux-outline">
-              <i class="bi bi-folder2-open me-1" /> View Projects
-            </RouterLink>
+    <div class="card-lux mb-4 fade-up fade-up-1 tilt-effect">
+      <div class="tilt-inner">
+        <div class="row align-items-center g-4">
+          <div class="col-lg-auto text-center">
+            <div class="hero-avatar mx-auto">{{ profile.initials }}</div>
+          </div>
+          <div class="col-lg">
+            <span class="badge-lux d-inline-block mb-2">PORTFOLIO</span>
+            <h1 class="fw-bold mb-1">
+              Hi, I'm <span style="color: var(--lux-gold-soft)">{{ profile.name }}</span>
+            </h1>
+            <p class="mb-2" style="color: var(--lux-gold-soft); font-weight:600;">
+              {{ profile.role }}
+            </p>
+            <p style="color: var(--lux-muted); max-width: 620px;" class="mb-3">
+              {{ profile.tagline }}
+            </p>
+            <div class="d-flex flex-wrap gap-2">
+              <RouterLink :to="{ name: 'contact' }" class="btn btn-lux">
+                <i class="bi bi-send me-1" /> Hire Me
+              </RouterLink>
+              <RouterLink :to="{ name: 'projects' }" class="btn btn-lux-outline">
+                <i class="bi bi-folder2-open me-1" /> View Projects
+              </RouterLink>
+            </div>
           </div>
         </div>
       </div>
@@ -45,7 +47,7 @@ const profile = useProfileStore()
         :key="s.label"
         class="col-sm-6 col-lg-3"
       >
-        <div :class="`fade-up fade-up-${i + 1}`">
+        <div class="card-lux h-100 fade-up fade-up-1 tilt-effect">
           <StatCard :icon="s.icon" :label="s.label" :value="s.value" />
         </div>
       </div>
